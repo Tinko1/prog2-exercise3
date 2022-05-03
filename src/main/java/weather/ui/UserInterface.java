@@ -4,17 +4,23 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
+import tk.plogitech.darksky.forecast.GeoCoordinates;
+import tk.plogitech.darksky.forecast.model.Latitude;
+import tk.plogitech.darksky.forecast.model.Longitude;
 import weather.ctrl.WeatherController;
 
 public class UserInterface 
 {
 
 	private WeatherController ctrl = new WeatherController();
+	private Longitude longitude = new Longitude(16);
+	private Latitude latitude = new Latitude(48);
+	GeoCoordinates newYork = new GeoCoordinates(longitude, latitude);
 
 	public void getWeatherForCity1(){
 		
 		//TODO enter the coordinates 
-		ctrl.process(null);
+		ctrl.process(newYork);
 
 	}
 
